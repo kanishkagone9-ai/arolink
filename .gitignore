@@ -1,0 +1,39 @@
+﻿# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production & Builds
+build/
+dist/
+android/app/build/
+android/.gradle/
+android/app/release/
+.expo/
+.expo-shared/
+
+# Environment & Secrets
+.env
+.env.local
+.env.development.local
+
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+.pytest_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
