@@ -1,8 +1,10 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, StatusBar } from 'react-native';
 import { PatientProfileScreen } from './src/screens/PatientProfileScreen';
 import { TriageScreen } from './src/screens/TriageScreen';
 import { TriageResultScreen } from './src/screens/TriageResultScreen';
+import { TeleconsultScreen } from './src/screens/TeleconsultScreen';
+import { ConsultNoteScreen } from './src/screens/ConsultNoteScreen';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState('PatientProfileScreen');
@@ -17,14 +19,16 @@ export default function App() {
       setCurrentScreen(screenName);
     },
     goBack: () => {
-      if (currentScreen === 'TriageResultScreen') setCurrentScreen('TriageScreen');
+      if (currentScreen === 'ConsultNoteScreen') setCurrentScreen('TeleconsultScreen');
+      else if (currentScreen === 'TeleconsultScreen') setCurrentScreen('PatientProfileScreen');
+      else if (currentScreen === 'TriageResultScreen') setCurrentScreen('TriageScreen');
       else if (currentScreen === 'TriageScreen') setCurrentScreen('PatientProfileScreen');
     }
   };
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle=\"dark-content\" backgroundColor=\"#F8FAFC\" />
+      <StatusBar barStyle="dark-content" backgroundColor="#F8FAFC" />
       {currentScreen === 'PatientProfileScreen' && (
         <PatientProfileScreen
           navigation={navigation}
@@ -40,6 +44,18 @@ export default function App() {
       )}
       {currentScreen === 'TriageResultScreen' && (
         <TriageResultScreen
+          navigation={navigation}
+          route={{ params: screenParams }}
+        />
+      )}
+      {currentScreen === 'TeleconsultScreen' && (
+        <TeleconsultScreen
+          navigation={navigation}
+          route={{ params: screenParams }}
+        />
+      )}
+      {currentScreen === 'ConsultNoteScreen' && (
+        <ConsultNoteScreen
           navigation={navigation}
           route={{ params: screenParams }}
         />
