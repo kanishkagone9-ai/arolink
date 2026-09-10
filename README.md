@@ -1,4 +1,4 @@
-# AroLink (SwasthSetu) - Last-Mile Healthcare for Rural India
+# AroLink  - Last-Mile Healthcare for Rural India
 
 Smart India Hackathon 2026 | Problem Statement 26133 (Government of Maharashtra)
 
